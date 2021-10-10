@@ -35,6 +35,3 @@ Follow the prompt and finish installing all softwares.
 ```bash
 source ~/.zshrc
 ```
-
-## Optional
-Open .zshrc and replace the theme with powerlevel10k
