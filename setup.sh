@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# Install zsh
+# Install oh-my-zsh
 echo "start install zsh"
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
@@ -16,10 +16,12 @@ echo "start install nodejs"
 nvm install stable
 node -v
 
-# Install yarn
-echo "start install yarn"
-npm i yarn -g
-echo "finish install yarn"
+# tmux
+#
+# ~/.tmux.conf >>
+# set-option -g mouse on # enable mouse
+#
+sudo apt install -y tmux
 
 # Create ssh key
 ssh-keygen -t rsa
