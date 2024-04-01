@@ -103,3 +103,25 @@ source $ZSH/oh-my-zsh.sh
 # NVM
 export NVM_DIR=/home/leason/.nvm # 导出NVM_DIR 环境变量，让nvm 安装node到该目录
 source /home/leason/.nvm/nvm.sh # 执行nvm 的命令, 激活nvm 到系统shell 中
+
+
+# pnpm
+export PNPM_HOME="/home/leason/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# gvm
+[[ -s "/home/leason/.gvm/scripts/gvm" ]] && source "/home/leason/.gvm/scripts/gvm"
+# 配置 Golang 软件包镜像
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
+# 下载 Golang 的二进制文件或源码压缩包进行安装
+export GO_BINARY_BASE_URL=https://mirrors.aliyun.com/golang/
+# 确保 Golang 使用源码编译安装时，不会出错（golang 1.14后需要 ）
+export GOROOT_BOOTSTRAP=$GOROOT
+# goframe
+alias gf=gf
+
