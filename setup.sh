@@ -4,11 +4,11 @@ set -e
 # Install oh-my-zsh
 echo "start install zsh"
 sudo apt install -y zsh
-sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 
 # Install nvm
 echo "start install nvm"
-sh -c "$(curl -fsSL https://gitee.com/mirrors/nvm/raw/master/install.sh)"
+bash -c "$(curl -fsSL https://gitee.com/mirrors/nvm/raw/master/install.sh)"
 nvm -v
 
 # Install Node.js
@@ -27,4 +27,17 @@ sudo apt install -y tmux
 ssh-keygen -t rsa
 
 # Install vscode
-sudo snap install --classic code
+# sudo snap install --classic code
+
+# gvm
+sudo apt-get install bison
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# golang
+gvm install go1.4 -B
+gvm use go1.4
+export GOROOT_BOOTSTRAP=$GOROOT
+gvm install go1.17.13
+gvm use go1.17.13
+export GOROOT_BOOTSTRAP=$GOROOT
+gvm install go1.20
+gvm use go1.20
